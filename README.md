@@ -12,8 +12,6 @@ This repository is part of my journey to improve problem-solving skills and stre
 javascript-DSA/
 │
 ├── 01-arrays/
-├── 
-├── 
 └── README.md
 
 
