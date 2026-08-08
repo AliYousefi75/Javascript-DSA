@@ -161,6 +161,18 @@ class LinkedList{
         this.length++;
     }
 
+    addFirst(value){
+        const newNode = new Node(value);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+    }
+
 
 }
 
@@ -169,6 +181,7 @@ myList.addLast(10);
 myList.addLast(20);
 myList.addLast(30);
 myList.addLast(40);
+myList.addFirst(5);
 console.log(myList.length);
 console.log(myList.head.value);
 console.log(myList.tail.value);
