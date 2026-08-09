@@ -101,6 +101,23 @@ class LinkedList{
         return -1;
     }
 
+    contains(value){
+        // از اول لیست شروع کن
+        let current = this.head;
+
+        // تا وقتی به انتها نرسیدی
+        while(current){
+            if(current.value === value){
+                return true;
+            }
+            // برو به گره بعدی
+            current = current.next;
+            // اگر کل لیست رو گشتی و پیدا نشد
+        }
+        return false;
+    }
+
+
 
 }
 
@@ -115,3 +132,4 @@ console.log(myList.head.value);
 console.log(myList.tail.value);
 console.log(myList);
 console.log(myList.indexOf(10));
+console.log(myList.contains(10))
