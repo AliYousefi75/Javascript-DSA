@@ -83,6 +83,24 @@ class LinkedList{
         this.length++;
     }
 
+    indexOf(value){
+        // از اول لیست شروع کن
+        let current = this.head;
+        let index =0;
+
+        //تا وقتی به انتها نرسیدی
+        while(current){
+        //اگر مقدار گره برابر با مقدار مورد نظر بود
+            if(current.value === value){
+                return index;
+            }
+        //برو به گره بعدی
+            current = current.next;
+            index++;
+        }
+        return -1;
+    }
+
 
 }
 
@@ -96,3 +114,4 @@ console.log(myList.length);
 console.log(myList.head.value);
 console.log(myList.tail.value);
 console.log(myList);
+console.log(myList.indexOf(10));
