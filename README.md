@@ -13,7 +13,7 @@ This repository is part of my journey to improve problem-solving skills and stre
 javascript-DSA/
 │
 ├── 01-arrays/
-├── 01-linked-list/
+├── 02-linked-list/
 └── README.md
 
 
