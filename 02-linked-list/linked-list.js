@@ -1,0 +1,98 @@
+
+// // LINKED LIST //
+
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class LinkedList{
+//     constructor(){
+//         this.head = null;
+//         this.tail =null;
+//         this.length = 0;
+//     }
+// }
+
+// //ساخت نود و اضافه کردن چند عنصر
+// const list = new LinkedList();
+// console.log(list);
+
+// const firstNode = new Node(10);
+// list.head = firstNode;
+// list.tail = firstNode;
+// list.length =1;
+
+// const secondNode = new Node(20);
+// list.tail.next = secondNode;
+// list.tail = secondNode;
+// list.length =2;
+
+// const thirdNode = new Node(30);
+// list.tail.next = thirdNode;
+// list.tail = thirdNode;
+// list.length=3;
+
+// console.log(list)
+
+
+
+
+
+// LINKED-LIST OPERATION //
+class Node {
+    constructor(value){
+        this.value = value;
+        this.next = null;
+
+    }
+}
+
+class LinkedList{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    addLast(value){
+        const newNode = new Node(value);
+
+        //اگر لیست خالی بود
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+    }
+
+    addFirst(value){
+        const newNode = new Node(value);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+    }
+
+
+}
+
+const myList = new LinkedList();
+myList.addLast(10);
+myList.addLast(20);
+myList.addLast(30);
+myList.addLast(40);
+myList.addFirst(5);
+console.log(myList.length);
+console.log(myList.head.value);
+console.log(myList.tail.value);
+console.log(myList);
