@@ -138,6 +138,21 @@ class LinkedList{
         return removed.value;
     }
 
+    getPrevious(){
+        // اگر لیست خالی یا فقط یک گره داشت
+        if(!this.head || this.length === 1){
+            return null;
+        }
+        // از اول شروع کن
+        let current = this.head;
+        // تا وقتی به گره قبل از آخر نرسیدی
+        while(current.next !== this.tail){
+            current = current.next;
+        }
+        // گره قبل از آخر رو برگردون
+        return current;
+    }
+
     removeLast(){
         // اگر لیست خالی بود
         if(!this.head){
@@ -147,22 +162,33 @@ class LinkedList{
         if(this.length === 1){
             const removed = this.head;
             this.head = null;
-            this.tial = null;
+            this.tail = null;
             this.length--;
             return removed.value;
         }
+
         // اگر چند گره داشت
         // برو به گره قبل از آخر
-        let current = this.head;
-        while(current.next !== this.tail){
-            current = current.next;
-        }
+        //روش اول
+        // let current = this.head;
+        // while(current.next !== this.tail){
+        //     current = current.next;
+        // }
+        //روش دوم
+        const previous = this.getPrevious()
+
         // گره آخر رو ذخیره کن
         const removed = this.tail;
         // گره قبل از آخر رو به null وصل کن
-        current.next = null;
+        //روش اول
+        // current.next = null;
+        //روش دوم
+        previous.next = null;
         // tail رو آپدیت کن به گره قبل از آخر
-        this.tail = current;
+        //روش اول
+        // this.tail = current;
+        //روش دوم
+        this.tail = previous;
         // طول رو کم کن
         this.length--;
          // مقدار حذف شده رو برگردون
@@ -208,5 +234,12 @@ console.log(myList.removeFirst())
 console.log(myList.tail.value);
 myList.removeLast();
 console.log(myList.tail.value);
-console.log(myList.size())
-console.log(myList.toArray())
+console.log(myList.size());
+console.log(myList.toArray());
+let prev = myList.getPrevious();
+console.log(prev.value);
+console.log(myList.removeLast())
+console.log(myList.toArray());
+console.log(myList.removeLast())
+console.log(myList.toArray());
+
