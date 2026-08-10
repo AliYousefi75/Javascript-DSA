@@ -169,6 +169,10 @@ class LinkedList{
         return removed.value;
     }
 
+    size(){
+        return this.length;
+    }
+
 
 
 }
@@ -189,3 +193,4 @@ console.log(myList.removeFirst())
 console.log(myList.tail.value);
 myList.removeLast();
 console.log(myList.tail.value);
+console.log(myList.size())
