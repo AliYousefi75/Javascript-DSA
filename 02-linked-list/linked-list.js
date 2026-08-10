@@ -173,7 +173,22 @@ class LinkedList{
         return this.length;
     }
 
+    toArray(){
+        // آرایه خالی بساز
+        const result =[];
 
+        // از اول لیست شروع کن
+        let current = this.head;
+        // تا وقتی به انتها نرسیدی
+        while(current){
+        // مقدار گره رو به آرایه اضافه کن (دستی!)
+            result[result.length] = current.value;
+        // برو به گره بعدی
+            current = current.next;
+        }
+        // آرایه رو برگردون
+        return result;
+    }
 
 }
 
@@ -194,3 +209,4 @@ console.log(myList.tail.value);
 myList.removeLast();
 console.log(myList.tail.value);
 console.log(myList.size())
+console.log(myList.toArray())
