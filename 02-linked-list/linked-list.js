@@ -136,7 +136,37 @@ class LinkedList{
         this.length--;
         //مقدار گره حذف شده رو برگردون
         return removed.value;
+    }
 
+    removeLast(){
+        // اگر لیست خالی بود
+        if(!this.head){
+            return null;
+        }
+        // اگر فقط یک گره داشت
+        if(this.length === 1){
+            const removed = this.head;
+            this.head = null;
+            this.tial = null;
+            this.length--;
+            return removed.value;
+        }
+        // اگر چند گره داشت
+        // برو به گره قبل از آخر
+        let current = this.head;
+        while(current.next !== this.tail){
+            current = current.next;
+        }
+        // گره آخر رو ذخیره کن
+        const removed = this.tail;
+        // گره قبل از آخر رو به null وصل کن
+        current.next = null;
+        // tail رو آپدیت کن به گره قبل از آخر
+        this.tail = current;
+        // طول رو کم کن
+        this.length--;
+         // مقدار حذف شده رو برگردون
+        return removed.value;
     }
 
 
@@ -156,3 +186,6 @@ console.log(myList);
 console.log(myList.indexOf(10));
 console.log(myList.contains(10));
 console.log(myList.removeFirst())
+console.log(myList.tail.value);
+myList.removeLast();
+console.log(myList.tail.value);
