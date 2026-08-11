@@ -216,6 +216,32 @@ class LinkedList{
         return result;
     }
 
+    reverse(){
+        // اگر لیست خالی یا یک گره داشت، کاری نکن
+        if(!this.head || this.length ===1){
+            return;
+        }
+        //سه تا اشاره‌گر تعریف کن
+        let prev = null;
+        let current = this.head;
+        let next = null;
+        //حلقه بزن تا به انتها برسی
+        while(current){
+            // گره بعدی رو ذخیره کن (قبل از اینکه مسیر رو عوض کنی)    
+            next = current.next;
+            // اشاره‌گر current رو به prev برگردون
+            current.next = prev;
+            // یک قدم جلو برو
+            prev = current;
+            current = next;
+        }
+        // head و tail رو عوض کن
+        this.tail = this.head;
+        this.head =prev;
+    }
+
+ 
+
 }
 
 const myList = new LinkedList();
@@ -223,23 +249,27 @@ myList.addLast(10);
 myList.addLast(20);
 myList.addLast(30);
 myList.addLast(40);
-myList.addFirst(5);
-console.log(myList.length);
-console.log(myList.head.value);
-console.log(myList.tail.value);
-console.log(myList);
-console.log(myList.indexOf(10));
-console.log(myList.contains(10));
-console.log(myList.removeFirst())
-console.log(myList.tail.value);
-myList.removeLast();
-console.log(myList.tail.value);
-console.log(myList.size());
+// myList.addFirst(5);
+// console.log(myList.length);
+// console.log(myList.head.value);
+// console.log(myList.tail.value);
+// console.log(myList);
+// console.log(myList.indexOf(10));
+// console.log(myList.contains(10));
+// console.log(myList.removeFirst())
+// console.log(myList.tail.value);
+// myList.removeLast();
+// console.log(myList.tail.value);
+// console.log(myList.size());
+// console.log(myList.toArray());
+// let prev = myList.getPrevious();
+// console.log(prev.value);
+// console.log(myList.removeLast())
+// console.log(myList.toArray());
+// console.log(myList.removeLast())
+// console.log(myList.toArray());
 console.log(myList.toArray());
-let prev = myList.getPrevious();
-console.log(prev.value);
-console.log(myList.removeLast())
+myList.reverse()
 console.log(myList.toArray());
-console.log(myList.removeLast())
-console.log(myList.toArray());
+
 
