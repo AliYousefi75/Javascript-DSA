@@ -240,7 +240,29 @@ class LinkedList{
         this.head =prev;
     }
 
- 
+    getFromLast(k){
+        //اگر k نامعتبر بود
+        if(k<=0 || k>this.length){
+            return null;
+        }
+        // دو تا اشاره‌گر تعریف کن
+        let slow = this.head;
+        let fast = this.head;
+
+        // fast رو k قدم جلو ببر
+        for(let i=0;i<k;i++){
+            fast = fast.next;
+        }
+        //هر دو رو با هم جلو ببر تا fast به انتها برسه
+        while(fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
+
+    
 
 }
 
@@ -268,8 +290,10 @@ myList.addLast(40);
 // console.log(myList.toArray());
 // console.log(myList.removeLast())
 // console.log(myList.toArray());
-console.log(myList.toArray());
-myList.reverse()
-console.log(myList.toArray());
+// console.log(myList.toArray());
+// myList.reverse()
+// console.log(myList.toArray());
+let k= myList.getFromLast(3)
+console.log(k.value)
 
 
