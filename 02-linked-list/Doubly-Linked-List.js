@@ -12,8 +12,8 @@ class DoublyLinkedList{
         this.tail = null;
         this.length = 0;
     }
-    
-        addLast(value){
+
+    addLast(value){
         let newNode = new Node(value)
 
         if(!this.head){
@@ -27,6 +27,19 @@ class DoublyLinkedList{
         this.length++;
     }
 
+    addFirst(value){
+        let newNode = new Node(value);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            newNode.next = this.head;
+            this.head.prev = newNode;
+            this.head = newNode;
+        }
+        this.length++
+    }
+
     
 
 
@@ -34,4 +47,9 @@ class DoublyLinkedList{
 }
 
 
-let doubly = new DoublyLinkedList()
+let doubly = new DoublyLinkedList();
+doubly.addFirst(10);
+doubly.addFirst(20);
+doubly.addLast(30);
+doubly.addLast(40);
+console.log(doubly.length);
