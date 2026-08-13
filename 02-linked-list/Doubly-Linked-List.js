@@ -40,6 +40,25 @@ class DoublyLinkedList{
         this.length++
     }
 
+    removeFirst(){
+        if(!this.head){
+            return null;
+        }
+
+        const removed = this.head;
+
+        if(this.length === 1){
+            this.head = null;
+            this.tail = null;
+        }else{
+            this.head = this.head.next;
+            this.head.prev = null;
+        }
+        this.length--;
+        return removed.vlaue;
+    }
+
+    
     
 
 
