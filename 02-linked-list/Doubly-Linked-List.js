@@ -77,6 +77,18 @@ class DoublyLinkedList{
         return removed.value
     }
 
+     print(){
+        let current = this.head;
+        const result =[];
+        while(current){
+            result.push(current.value);
+            current = current.next;
+        }
+        console.log(result.join('<->'));
+        return result;
+    }
+
+    
    
 
 
