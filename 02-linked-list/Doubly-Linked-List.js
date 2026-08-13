@@ -58,6 +58,28 @@ class DoublyLinkedList{
         return removed.vlaue;
     }
 
+    removeLast(){
+
+        if(!this.head){
+            return null;
+        }
+
+        let removed = this.tail;
+
+        if(this.length === 1){
+            this.head = null;
+            this.tail = null;
+        }else{
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+        }
+        this.length--;
+        return removed.value
+    }
+
+   
+
+
     
     
 
