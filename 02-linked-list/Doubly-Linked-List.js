@@ -88,21 +88,27 @@ class DoublyLinkedList{
         return result;
     }
 
-    
-   
-
-
-    
-    
-
-
+    printReverse(){
+        let current = this.tail;
+        const result = [];
+        while(current){
+            result.push(current.value);
+            current = current.prev;
+        }
+        console.log(result.join('<->'));
+        return result;
+    }
 
 }
 
 
 let doubly = new DoublyLinkedList();
-doubly.addFirst(10);
-doubly.addFirst(20);
+doubly.addLast(10);
+doubly.addLast(20);
 doubly.addLast(30);
-doubly.addLast(40);
-console.log(doubly.length);
+doubly.addFirst(5);
+doubly.print();
+doubly.printReverse();
+doubly.removeFirst();
+doubly.removeLast();
+doubly.print()
