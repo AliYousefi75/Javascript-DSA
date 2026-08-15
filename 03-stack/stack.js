@@ -79,4 +79,13 @@ class Stack{
         this.items[this.count] = undefined;
         return removed;
     }
+
+    peek(){
+        if(this.isEmpty()){
+            return "stack is empty";
+        }
+        return this.items[this.count-1];
+    }
+
+   
 }
