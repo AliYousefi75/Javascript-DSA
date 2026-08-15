@@ -69,4 +69,14 @@ class Stack{
         this.items[this.count] =value;
         this.count++
     }
+
+    pop(){
+        if(this.isEmpty()){
+            return "stack is empty";
+        }
+        this.count--;
+        const removed = this.items[this.count];
+        this.items[this.count] = undefined;
+        return removed;
+    }
 }
