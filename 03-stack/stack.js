@@ -87,5 +87,9 @@ class Stack{
         return this.items[this.count-1];
     }
 
-   
+    isEmpty(){
+        return this.count === 0;
+    }
+
+    
 }
