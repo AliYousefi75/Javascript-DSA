@@ -91,5 +91,7 @@ class Stack{
         return this.count === 0;
     }
 
-    
+    size(){
+        return this.count;
+    }
 }
