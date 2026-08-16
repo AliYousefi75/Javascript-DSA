@@ -94,4 +94,40 @@ class Stack{
     size(){
         return this.count;
     }
+
+    print(){
+        if(this.isEmpty()){
+            console.log('your stack is empty')
+            return;
+        }
+        let result='';
+        for(let i=0 ; i<this.count;i++){
+            result += this.items[i];
+            if(i<this.count-1)result += ' -> ';
+        }
+        console.log(result)
+    }
 }
+
+const stack = new Stack();
+
+console.log(stack.isEmpty()); // true
+
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+stack.print(); // 10 -> 20 -> 30
+
+console.log(stack.peek()); // 30
+console.log(stack.pop());  // 30
+console.log(stack.pop());  // 20
+
+stack.print(); // 10
+
+console.log(stack.size()); // 1
+console.log(stack.isEmpty()); // false
+
+console.log(stack.pop()); // 10
+console.log(stack.isEmpty()); // true
+console.log(stack.pop()); // "Stack is empty!"
