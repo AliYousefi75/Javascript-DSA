@@ -50,5 +50,10 @@ class Queue {
     }
 
     // 1. اضافه کردن به انتهای صف
+    enqueue(value){
+        this.items[this.count] = value;
+        this.count++;
+    }
+
     
 }
