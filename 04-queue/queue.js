@@ -74,5 +74,10 @@ class Queue {
         return this.items[this.frontIndex];
     }
 
-    
+    // 4. بررسی خالی بودن
+    isEmpty(){
+        return this.count === this.frontIndex;
+    }
+
+
 }
