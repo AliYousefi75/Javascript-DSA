@@ -84,5 +84,40 @@ class Queue {
         return this.count - this.frontIndex
     }
 
-
+    // 6. چاپ صف (برای دیباگ)
+    print(){
+        if(this.isEmpty()){
+            console.log("Queue is empty");
+            return;
+        }
+        let result ='';
+        for(let i = this.frontIndex; i < this.count; i++) {
+            result += this.items[i];
+            if(i<this.count-1) result +=' -> ';
+        }
+        console.log(result);
+    }
 }
+
+const queue = new Queue();
+
+console.log(queue.isEmpty()); // true
+
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+
+queue.print(); // 10 -> 20 -> 30
+
+console.log(queue.peek()); // 10
+console.log(queue.dequeue()); // 10
+console.log(queue.dequeue()); // 20
+
+queue.print(); // 30
+
+console.log(queue.size()); // 1
+console.log(queue.isEmpty()); // false
+
+console.log(queue.dequeue()); // 30
+console.log(queue.isEmpty()); // true
+console.log(queue.dequeue()); // "Queue is empty!"
