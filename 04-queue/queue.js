@@ -79,5 +79,10 @@ class Queue {
         return this.count === this.frontIndex;
     }
 
+    // 5. تعداد عناصر
+    size(){
+        return this.count - this.frontIndex
+    }
+
 
 }
