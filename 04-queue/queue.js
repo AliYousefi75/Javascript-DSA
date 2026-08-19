@@ -55,5 +55,13 @@ class Queue {
         this.count++;
     }
 
-    
+    dequeue(){
+        if(this.isEmpty()){
+            return 'Queue is empty!';
+        }
+        const removed = this.items[this.frontIndex];
+        this.items[this.frontIndex] = undefined;
+        this.frontIndex++;
+        return removed;
+    }
 }
