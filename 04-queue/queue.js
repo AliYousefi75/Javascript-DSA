@@ -55,6 +55,7 @@ class Queue {
         this.count++;
     }
 
+    // 2. حذف از ابتدای صف
     dequeue(){
         if(this.isEmpty()){
             return 'Queue is empty!';
@@ -64,4 +65,14 @@ class Queue {
         this.frontIndex++;
         return removed;
     }
+
+    // 3. دیدن اولین عنصر (بدون حذف)
+    peek(){
+        if(this.isEmpty()){
+            return 'Queue is empty!';
+        }
+        return this.items[this.frontIndex];
+    }
+
+    
 }
