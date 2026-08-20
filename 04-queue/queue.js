@@ -42,7 +42,7 @@
 // queue.print();
 
 
-
+import Stack from "../03-stack/stack.js";
 
 export default class Queue {
     constructor(){
@@ -99,6 +99,19 @@ export default class Queue {
         }
         console.log(result);
     }
+
+    reverse(){
+        let stack = new Stack();
+        while(!this.isEmpty()){
+            stack.push(this.dequeue())
+        }
+
+        while(!stack.isEmpty()){
+            this.enqueue(stack.pop())
+        }
+
+        return this;
+    }
 }
 
 const queue = new Queue();
@@ -123,3 +136,11 @@ console.log(queue.isEmpty()); // false
 console.log(queue.dequeue()); // 30
 console.log(queue.isEmpty()); // true
 console.log(queue.dequeue()); // "Queue is empty!"
+
+
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+queue.print()
+queue.reverse();
+queue.print()
