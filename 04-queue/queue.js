@@ -42,7 +42,9 @@
 // queue.print();
 
 
-class Queue {
+
+
+export default class Queue {
     constructor(){
         this.items =[];         // آرایه برای ذخیره عناصر
         this.count=0;           // تعداد عناصر (و ایندکس بعدی برای اضافه کردن)
