@@ -48,4 +48,38 @@ class CircularQueue{
     size(){
         return this.count;
     }
+
+    print(){
+        if(this.isEmpty()){
+            console.log('Queue is empty!');
+            return;
+        }
+        let result = '';
+        let index = this.front;
+        for(let i =0;i<this.count;i++){
+            result += this.items[index];
+            if(i<this.count-1)result += ' -> ';
+            index = (index + 1) % this.items.length;
+        }
+        console.log(result);
+    }
+
+    printArray(){
+        console.log(this.items)
+    }
 }
+
+
+// تست
+const queue = new CircularQueue(5);
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+queue.enqueue(40);
+queue.enqueue(50);
+queue.dequeue()
+queue.dequeue()
+queue.enqueue(60)
+queue.dequeue()
+queue.printArray(); 
+console.log(queue.isFull()); 
