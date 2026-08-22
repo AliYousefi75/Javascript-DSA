@@ -36,4 +36,10 @@ class CircularQueue{
         }
         return this.items[this.front];
     }
+
+    isEmpty(){
+        return this.count === 0;
+    }
+
+    
 }
