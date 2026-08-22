@@ -44,4 +44,8 @@ class CircularQueue{
     isFull(){
         return this.count === this.items.length;
     }
+
+    size(){
+        return this.count;
+    }
 }
