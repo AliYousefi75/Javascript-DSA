@@ -18,4 +18,15 @@ class CircularQueue{
         this.count++;
 
     }
+
+    dequeue(){
+        if(this.isEmpty()){
+            return "Queue is empty";
+        }
+        const removed = this.items[this.front];
+        this.items[this.front] = undefined;
+        this.front = (this.front + 1) % this.capacity;
+        this.count--;
+        return removed;
+    }
 }
