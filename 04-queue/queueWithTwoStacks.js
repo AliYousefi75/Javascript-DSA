@@ -4,12 +4,12 @@ class QueueWithTwoStacks{
     constructor(){
         this.stack1 = new Stack();
         this.stack2 = new Stack();
-        this.size = 0;
+        this.count = 0;
     }
 
     enqueue(value){
         this.stack1.push(value);
-        this.size++;
+        this.count++;
         return this;
     }
 
@@ -23,7 +23,7 @@ class QueueWithTwoStacks{
                 this.stack2.push(this.stack1.pop())
             }
         }
-        this.size--;
+        this.count--;
         return this.stack2.pop()
     }
 
@@ -41,11 +41,22 @@ class QueueWithTwoStacks{
     }
 
     isEmpty(){
-        return this.size ===0;
+        return this.count ===0;
     }
 
     size(){
-        return this.size();
+        return this.count;
     }
 
 }
+
+
+const queue = new QueueWithTwoStacks();
+console.log(queue.isEmpty())
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+queue.enqueue(40);
+console.log(queue.dequeue())
+console.log(queue.peek())
+console.log(queue.size())
