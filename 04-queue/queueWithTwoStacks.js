@@ -40,4 +40,8 @@ class QueueWithTwoStacks{
         return this.stack2.peek()
     }
 
+    isEmpty(){
+        return this.size ===0;
+    }
+
 }
