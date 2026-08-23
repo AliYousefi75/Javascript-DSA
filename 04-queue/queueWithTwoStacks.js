@@ -13,5 +13,18 @@ class QueueWithTwoStacks{
         return this;
     }
 
+    dequeue(){
+        if(this.isEmpty()){
+            return 'Queue is empty!'
+        }
+
+        if(this.stack2.isEmpty()){
+            while(!this.stack1.isEmpty()){
+                this.stack2.push(this.stack1.pop())
+            }
+        }
+        this.size--;
+        return this.stack2.pop()
+    }
     
 }
