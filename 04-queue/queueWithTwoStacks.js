@@ -6,4 +6,12 @@ class QueueWithTwoStacks{
         this.stack2 = new Stack();
         this.size = 0;
     }
+
+    enqueue(value){
+        this.stack1.push(value);
+        this.size++;
+        return this;
+    }
+
+    
 }
