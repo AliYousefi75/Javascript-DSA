@@ -44,4 +44,8 @@ class QueueWithTwoStacks{
         return this.size ===0;
     }
 
+    size(){
+        return this.size();
+    }
+
 }
