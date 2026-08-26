@@ -17,7 +17,7 @@ javascript-DSA/
 ├── 01-arrays/
 ├── 02-linked-list/
 ├── 03-stack/
-├── 02-queue/
+├── 04-queue/
 └── README.md
 
 
