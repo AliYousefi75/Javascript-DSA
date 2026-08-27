@@ -6,6 +6,8 @@ This repository is part of my journey to improve problem-solving skills and stre
 
 * Arrays
 * Linked-List
+* Stack
+* Queue
 
 
 ## Structure
@@ -14,6 +16,8 @@ javascript-DSA/
 │
 ├── 01-arrays/
 ├── 02-linked-list/
+├── 03-stack/
+├── 04-queue/
 └── README.md
 
 
