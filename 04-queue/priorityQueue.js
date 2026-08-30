@@ -57,6 +57,10 @@ class PriorityQueue {
         return this.count === this.capacity;
     }
 
+    size(){
+        return this.count;
+    }
+
 
 
     
