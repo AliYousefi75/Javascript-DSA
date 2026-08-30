@@ -42,6 +42,13 @@ class PriorityQueue {
         return removedItem;
     }
 
+    peek(){
+        if(this.isEmpty()){
+            return "Queue is empty";
+        }
+        return this.items[0];
+    }
+
     
 }
 
