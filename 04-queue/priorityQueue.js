@@ -28,6 +28,20 @@ class PriorityQueue {
 
     }
 
+    remove(){
+        // if(this.isEmpty()){
+        //     return 'Queue is empty!';
+        // }
+        const removedItem = this.items[0];
+
+        for(let i=0 ; i<this.count-1 ; i++){
+            this.items[i] = this.items[i+1];
+        }
+        this.items[this.count -1] = undefined;
+        this.count --;
+        return removedItem;
+    }
+
     
 }
 
@@ -38,4 +52,5 @@ pq.add(8)
 pq.add(2)
 pq.add(1)
 pq.add(10)
+console.log(pq.remove())
 console.log(pq.add())
