@@ -48,6 +48,10 @@ class PriorityQueue {
         }
         return this.items[0];
     }
+    isEmpty(){
+        return this.count===0;
+    }
+    
 
     
 }
