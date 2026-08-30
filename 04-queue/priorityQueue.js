@@ -8,14 +8,14 @@ class PriorityQueue {
     }
 
     add(value){
-        // if(this.isFull()){
-        //     return 'Queue is full!'
-        // }
-        // if(this.isEmpty()){
-        //     this.items[0] = value;
-        //     this.count++;
-        //     return this;
-        // }
+        if(this.isFull()){
+            return 'Queue is full!'
+        }
+        if(this.isEmpty()){
+            this.items[0] = value;
+            this.count++;
+            return this;
+        }
 
         let insertIndex = this.count;
         for(let i = this.count-1; i>=0 && value<this.items[i];i--){
@@ -29,9 +29,9 @@ class PriorityQueue {
     }
 
     remove(){
-        // if(this.isEmpty()){
-        //     return 'Queue is empty!';
-        // }
+        if(this.isEmpty()){
+            return 'Queue is empty!';
+        }
         const removedItem = this.items[0];
 
         for(let i=0 ; i<this.count-1 ; i++){
@@ -61,17 +61,49 @@ class PriorityQueue {
         return this.count;
     }
 
+    print(){
+        if(this.isEmpty()){
+            console.log("Queue is empty!");
+            return;
+        }
 
+        let result = "";
+        for(let i=0 ;i<this.count ;i++){
+            result += this.items[i];
+            if(i <this.count-1) result += ' -> ';
+        }
+        console.log(result);
+    }
 
     
 }
 
 
 const pq = new PriorityQueue(5);
-pq.add(5)
-pq.add(8)
-pq.add(2)
-pq.add(1)
-pq.add(10)
-console.log(pq.remove())
-console.log(pq.add())
+
+
+pq.add(10);
+pq.add(30);
+pq.add(20);
+pq.add(50);
+pq.add(40);
+
+pq.print(); // 10 -> 20 -> 30 -> 40 -> 50
+
+
+console.log(pq.remove()); // 10
+pq.print(); // 20 -> 30 -> 40 -> 50
+
+
+pq.add(25);
+pq.print(); // 20 -> 25 -> 30 -> 40 -> 50
+
+
+pq.remove(); // 20
+pq.add(15);
+pq.print(); // 15 -> 25 -> 30 -> 40 -> 50
+
+
+pq.remove(); // 15
+pq.add(35);
+pq.print(); // 25 -> 30 -> 35 -> 40 -> 50
