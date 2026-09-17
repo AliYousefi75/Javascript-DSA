@@ -20,3 +20,7 @@ console.log(map.get('mona'));
 console.log(map.has('reza'));
 console.log(map.has('parisa'));
 
+// ۴. حذف
+map.delete('reza');
+console.log(map.has('reza'));
+
