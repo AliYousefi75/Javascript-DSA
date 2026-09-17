@@ -16,3 +16,7 @@ console.log(map);
 console.log(map.get('ali'));
 console.log(map.get('mona'));
 
+// ۳. بررسی وجود
+console.log(map.has('reza'));
+console.log(map.has('parisa'));
+
