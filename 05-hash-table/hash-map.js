@@ -12,3 +12,7 @@ map.set('reza',20);
 map.set('mona',25);
 console.log(map);
 
+// ۲. گرفتن مقدار
+console.log(map.get('ali'));
+console.log(map.get('mona'));
+
