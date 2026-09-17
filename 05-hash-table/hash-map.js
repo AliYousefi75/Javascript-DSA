@@ -24,3 +24,6 @@ console.log(map.has('parisa'));
 map.delete('reza');
 console.log(map.has('reza'));
 
+// ۵. تعداد
+console.log(map.size);
+
