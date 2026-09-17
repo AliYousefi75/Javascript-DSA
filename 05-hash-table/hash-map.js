@@ -27,3 +27,6 @@ console.log(map.has('reza'));
 // ۵. تعداد
 console.log(map.size);
 
+// ۶. پاک کردن همه
+map.clear();
+console.log(map.size);       // 0
