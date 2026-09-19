@@ -30,3 +30,17 @@ console.log(map.size);
 // ۶. پاک کردن همه
 map.clear();
 console.log(map.size);       // 0
+
+// پیمایش
+map.set('ali',30);
+map.set('reza',20);
+map.set('mona',25);
+map.set('saeed',34);
+map.set('kelly',23);
+map.set('raha',26);
+console.log(map);
+
+// for...of
+for(let [key,value] of map){
+    console.log(`${key} : ${value}`);
+}
