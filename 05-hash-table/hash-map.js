@@ -44,3 +44,8 @@ console.log(map);
 for(let [key,value] of map){
     console.log(`${key} : ${value}`);
 }
+
+//forEach
+map.forEach((value,key)=>{
+    console.log(`${key}: ${value}`);
+})
