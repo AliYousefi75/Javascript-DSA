@@ -49,3 +49,8 @@ for(let [key,value] of map){
 map.forEach((value,key)=>{
     console.log(`${key}: ${value}`);
 })
+
+//iterate keys
+for(let key of map.keys()){
+    console.log(key);
+}
