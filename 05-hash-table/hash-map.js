@@ -59,3 +59,7 @@ for(let key of map.keys()){
 for(let value of map.values()){
     console.log(value);
 }
+
+for(let [key,value] of map.entries()){
+    console.log(`${key} : ${value}`);
+}
