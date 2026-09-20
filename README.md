@@ -8,6 +8,7 @@ This repository is part of my journey to improve problem-solving skills and stre
 * Linked-List
 * Stack
 * Queue
+* HashTable
 
 
 ## Structure
@@ -18,6 +19,7 @@ javascript-DSA/
 ├── 02-linked-list/
 ├── 03-stack/
 ├── 04-queue/
+├── 05-hash-table/
 └── README.md
 
 
