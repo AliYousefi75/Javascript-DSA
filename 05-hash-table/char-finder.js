@@ -8,10 +8,13 @@ function findFirstNonRepeatingCharacter(str){
 
     // ۲. پیدا کردن اولین کاراکتر غیرتکراری
     for (let char of str) {
-        if(charCount.get(cahr) === 1){
+        if(charCount.get(char) === 1){
             return char;
         }
     }
 
     return null;
 }
+
+console.log(findFirstNonRepeatingCharacter("aabbcdde"));    // "c"
+console.log(findFirstNonRepeatingCharacter("leetcode"));    // "l"
