@@ -26,5 +26,9 @@ function testSet(){
     set.forEach(value=>{
         console.log(value)
     })
+
+    // تبدیل به آرایه
+    const array = [...set];
+    console.log(array);
 }
 testSet()
