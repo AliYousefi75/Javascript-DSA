@@ -20,5 +20,11 @@ function testSet(){
     for(let value of set){
         console.log(value)
     }
+
+    //پیمایش با forEach
+    console.log('iterate with for each')
+    set.forEach(value=>{
+        console.log(value)
+    })
 }
 testSet()
