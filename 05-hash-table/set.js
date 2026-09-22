@@ -30,5 +30,10 @@ function testSet(){
     // تبدیل به آرایه
     const array = [...set];
     console.log(array);
+
+    //پاک کردن همه (clear)
+    set.clear();
+    console.log(set.size);
+    console.log('isEmpty:',set.size === 0);
 }
 testSet()
