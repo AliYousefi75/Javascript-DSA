@@ -11,9 +11,14 @@ function testSet(){
     //بررسی وجود (has)
     console.log(set.has(70));
     console.log(set.has(78));
-    
+
     // حذف (delete)
     set.delete(2);
     console.log(set);
+
+    // پیمایش با for...of
+    for(let value of set){
+        console.log(value)
+    }
 }
 testSet()
