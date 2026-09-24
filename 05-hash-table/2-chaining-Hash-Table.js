@@ -20,4 +20,33 @@ class HashTable{
         }
         return total % this.size;
     }
+
+    set(key,value){
+        const index = this._hash(key);
+
+        // اگه خونه خالی بود، یه گره جدید بساز
+        if(!this.buckets[index]){
+            this.buckets[index] = new Node(key,value);
+            this.count++;
+            return;
+        }
+
+        // اگه خونه خالی نبود، توی لیست بگرد
+        let current = this.buckets[index];
+
+        while(current){
+            // اگه کلید پیدا شد، مقدار رو به‌روزرسانی کن
+            if(current.key === key){
+                current.value = value;
+                return;
+            }
+            // اگه به آخر لیست رسیدی، گره جدید اضافه کن
+            if(!current.next){
+                current.next = new Node(key,value);
+                this.count++;
+                return;
+            }
+            current = current.next;
+        }
+    }
 }
