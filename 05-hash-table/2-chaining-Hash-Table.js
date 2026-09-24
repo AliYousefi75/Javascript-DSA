@@ -12,4 +12,12 @@ class HashTable{
         this.buckets = new Array(size); // هر خونه لیست پیوندیه
         this.count = 0; // تعداد عناصر
     }
+
+    _hash(key){
+        let total =0;
+        for(let i = 0; i < key.length; i++){
+            total += key.charCodeAt(i);
+        }
+        return total % this.size;
+    }
 }
