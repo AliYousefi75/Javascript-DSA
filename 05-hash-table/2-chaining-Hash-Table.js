@@ -49,4 +49,17 @@ class HashTable{
             current = current.next;
         }
     }
+
+    get(key){
+        const index = this._hash(key);
+        let current = this.buckets[index];
+
+        while(current){
+            if(current.key === key){
+                return current.value;
+            }
+            current = current.next;
+        }
+        return undefined;
+    }
 }
