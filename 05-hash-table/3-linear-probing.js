@@ -30,6 +30,24 @@ class LinearProbing{
         this.values[index] = value;
         this.count++;
     }
+
+    get(key){
+        let index = this._hash(key);
+        let startIndex = index;//برای تشخیص دور کامل
+
+        while(this.keys[index] !== null){
+            if(this.keys[index] === key){
+                return this.values[index];
+            }
+            index = (index + 1) % this.size;
+
+            // اگه دور کامل زدیم و به اول برگشتیم
+            if(index === startIndex){
+                return undefined;
+            }
+        }
+        return undefined;// پیدا نشد
+    }
 }
 
 
@@ -42,3 +60,10 @@ ht.set(29, "E");
 
 console.log(ht.keys);
 console.log(ht.values);
+
+console.log(ht.get(22)); // "A"
+console.log(ht.get(15)); // "B"
+console.log(ht.get(8));  // "C"
+console.log(ht.get(1));  // "D"
+console.log(ht.get(29)); // "E"
+console.log(ht.get(99)); // undefined
