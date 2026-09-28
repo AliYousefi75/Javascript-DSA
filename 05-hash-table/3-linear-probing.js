@@ -48,6 +48,27 @@ class LinearProbing{
         }
         return undefined;// پیدا نشد
     }
+
+    delete(key){
+        const DELETED = Symbol('DELETED');
+        let index = this._hash(key);
+        let startIndex = index;
+
+        while(this.keys[index] !== null){
+            if(this.keys[index] === key){
+                this.keys[index] = DELETED;
+                this.values[index] = null;
+                this.count--;
+                return true;
+            }
+            index = (index + 1) % this.size;
+
+            if(index === startIndex){
+                return false;
+            }
+        }
+        return false
+    }
 }
 
 
