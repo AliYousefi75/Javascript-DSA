@@ -60,6 +60,28 @@ class QuadraticProbing{
         return undefined; // پیدا نشد
     }
 
+    delete(key){
+        let index = this._hash(key);
+        let i =0;
+
+        // تا وقتی به خونه خالی (null) نرسیدیم
+        while(this.keys[index] !== null){
+            if(this.keys[index] === key){
+                // پیدا شد → علامت‌گذاری کن
+                this.keys[index] = DELETED;
+                this.values[index] = null;
+                this.count--;
+            }
+            i++;
+            index = (this._hash(key) + i*i) % this.size;
+
+            if(i >= this.size){
+                return false;
+            }
+        }
+        return false; //پیدا نشد
+    }
+
 }
 
 
@@ -71,6 +93,7 @@ const ht = new QuadraticProbing(7);
 ht.set(22, "A");
 ht.set(15, "B");
 ht.set(8, "C");
+ht.delete(8);
 
 console.log(ht.get(22)); // "A"
 console.log(ht.get(15)); // "B"
