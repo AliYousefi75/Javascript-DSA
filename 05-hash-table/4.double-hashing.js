@@ -83,6 +83,13 @@ class DoubleHashing {
         }
         return false;
     }
+
+    print(){
+        for(let i=0; i<this.size; i++){
+            const key = this.keys[i] === DELETED ? 'DELETED' : this.keys[i];
+            console.log(`[${i}] → ${key}: ${this.values[i]}`);
+        }
+    }
 }
 
 const ht = new DoubleHashing(7);
@@ -96,3 +103,4 @@ ht.delete(15);
 console.log(ht.get(15)); // undefined
 console.log(ht.get(8));  // "C" ✅ (باید همچنان کار کنه!)
 console.log(ht.keys);    // [_, 22, _, _, 8, DELETED, _]
+ht.print();
