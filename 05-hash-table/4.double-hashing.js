@@ -1,4 +1,4 @@
-const DELETED = new Symbol('DELETED');
+const DELETED = Symbol('DELETED')
 
 class DoubleHashing {
     constructor(size = 7){
@@ -61,4 +61,38 @@ class DoubleHashing {
 
         return undefined; //پیدا نشد
     }
+
+    delete(key){
+        let index = this.h1(key);
+        let i =0;
+
+        while(this.keys[index] !== null){
+            if(this.keys[index] === key){
+                this.keys[index] = DELETED;
+                this.values[index] = null;
+                this.count--;
+                return true;
+            }
+
+            i++;
+            index = (this.h1(key) + i * this.h2(key)) % this.size;
+
+            if(i >= this.size){
+                return false;
+            }
+        }
+        return false;
+    }
 }
+
+const ht = new DoubleHashing(7);
+ht.set(22, "A");
+ht.set(15, "B");
+ht.set(8, "C");
+
+console.log(ht.get(15)); // "B"
+
+ht.delete(15);
+console.log(ht.get(15)); // undefined
+console.log(ht.get(8));  // "C" ✅ (باید همچنان کار کنه!)
+console.log(ht.keys);    // [_, 22, _, _, 8, DELETED, _]
