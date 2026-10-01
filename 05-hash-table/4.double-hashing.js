@@ -41,4 +41,24 @@ class DoubleHashing {
         this.values[index] = value;
         this.count ++;
     }
+
+    get(key){
+        let index = this.h1(key);
+        let i =0;
+
+        while(this.keys[index] !== null){
+            if(this.keys[index] === key){
+                return this.values[index];
+            }
+
+            i++;
+            index = (this.h1(key) + i * this.h2(key)) % this.size;
+
+            if(i >= this.size){
+                return undefined;
+            }
+        }
+
+        return undefined; //پیدا نشد
+    }
 }
