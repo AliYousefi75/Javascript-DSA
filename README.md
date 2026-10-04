@@ -9,6 +9,7 @@ This repository is part of my journey to improve problem-solving skills and stre
 * Stack
 * Queue
 * HashTable
+* Tree
 
 
 ## Structure
@@ -20,6 +21,7 @@ javascript-DSA/
 ├── 03-stack/
 ├── 04-queue/
 ├── 05-hash-table/
+├── 06-Tree/
 └── README.md
 
 
