@@ -50,6 +50,34 @@ class BinarySearchTree {
             }
         }
     }
+
+    find(value){
+
+        // اگه درخت خالی بود
+        if(!this.root){
+            return null;
+        }
+
+        // از ریشه شروع کن
+        let current = this.root;
+
+        while(current){
+            //پیدا شد
+            if(value === current.value){
+                return current;
+            }
+
+            // برو چپ
+            if(value<current.value){
+                current = current.left;
+            }
+            // برو راست
+            else{
+                current = current.right;
+            }
+        }
+        return null;
+    }
 }
 
 
