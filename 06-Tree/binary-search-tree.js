@@ -79,18 +79,25 @@ class BinarySearchTree {
         return null;
     }
 
-    traversePreorder(node){
-        const result = [];
+    // traversePreorder(node){
+    //     const result = [];
 
-        function traverse(node){
-            if(!node)return;
+    //     function traverse(node){
+    //         if(!node)return;
 
-            result.push(node.value);
-            traverse(node.left)
-            traverse(node.right)
-        }
-        traverse(this.root);
-        return result;
+    //         result.push(node.value);
+    //         traverse(node.left)
+    //         traverse(node.right)
+    //     }
+    //     traverse(this.root);
+    //     return result;
+    // }
+
+    traversePreorder(node = this.root){
+        if(!node) return ;
+        console.log(node.value)
+        this.traversePreorder(node.left)
+        this.traversePreorder(node.right)
     }
 }
 
@@ -104,4 +111,4 @@ bst.insert(7);
 bst.insert(12);
 bst.insert(20);
 console.log(bst.root);
-console.log(bst.traversePreorder())
+bst.traversePreorder()
