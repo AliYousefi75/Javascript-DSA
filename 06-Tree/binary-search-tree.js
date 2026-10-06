@@ -99,6 +99,16 @@ class BinarySearchTree {
         this.traversePreorder(node.left)
         this.traversePreorder(node.right)
     }
+
+    traverseInorder(node = this.root, result = []){
+        if(!node)  return result ;
+
+        this.traverseInorder(node.left,result);
+        result.push(node.value);
+        this.traverseInorder(node.right,result);
+
+        return result;
+    }
 }
 
 
@@ -112,3 +122,4 @@ bst.insert(12);
 bst.insert(20);
 console.log(bst.root);
 bst.traversePreorder()
+console.log(bst.traverseInorder())
