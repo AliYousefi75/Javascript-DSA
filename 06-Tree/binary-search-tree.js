@@ -119,6 +119,19 @@ class BinarySearchTree {
 
         return result;
     }
+
+    height(node = this.root){
+        // درخت خالی
+        if(!node) return -1;
+
+        // ارتفاع چپ و راست
+        const leftHeight = this.height(node.left);
+        const rightHeight = this.height(node.right);
+
+        // بیشترین + ۱
+        return 1 + Math.max(leftHeight,rightHeight)
+    }
+    
 }
 
 
@@ -134,3 +147,4 @@ console.log(bst.root);
 bst.traversePreorder()
 console.log(bst.traverseInorder())
 console.log(bst.traversePostorder())
+console.log(bst.height())
