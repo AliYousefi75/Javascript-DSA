@@ -131,6 +131,20 @@ class BinarySearchTree {
         // بیشترین + ۱
         return 1 + Math.max(leftHeight,rightHeight)
     }
+
+    //BST findMin Method
+    findMin(node = this.root){
+        // اگه درخت خالی بود
+        if(!node) return null;
+
+        // تا وقتی فرزند چپ داری، برو چپ
+        while(node.left){
+            node = node.left;
+        }
+
+        // حالا node چپ‌ترین گره‌ست
+        return node.value;
+    }
     
 }
 
@@ -148,3 +162,4 @@ bst.traversePreorder()
 console.log(bst.traverseInorder())
 console.log(bst.traversePostorder())
 console.log(bst.height())
+console.log(bst.findMin())
