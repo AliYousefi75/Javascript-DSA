@@ -146,14 +146,33 @@ class BinarySearchTree {
     //     return node.value;
     // }
 
+    // findMin(node = this.root){
+
+    //     if(!node) return Infinity;
+
+    //     let left = this.findMin(node.left);
+    //     let right = this.findMin(node.left);
+
+    //     return Math.min(Math.min(left,right),node.value)
+    // }
+
     findMin(node = this.root){
+        if(!node) return null;
 
-        if(!node) return Infinity;
+        let min = node.value;
 
-        let left = this.findMin(node.left);
-        let right = this.findMin(node.left);
+        //برو چپ
+        const leftMin = this.findMin(node.left);
+        if(leftMin !== null && leftMin < min){
+            min = leftMin
+        }
 
-        return Math.min(Math.min(left,right),node.value)
+        const rightMin = this.findMin(node.right);
+        if(rightMin !== null && rightMin < min){
+            min = rightMin
+        }
+
+        return min;
     }
 
 
