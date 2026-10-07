@@ -133,18 +133,30 @@ class BinarySearchTree {
     }
 
     //BST findMin Method
+    // findMin(node = this.root){
+    //     // اگه درخت خالی بود
+    //     if(!node) return null;
+
+    //     // تا وقتی فرزند چپ داری، برو چپ
+    //     while(node.left){
+    //         node = node.left;
+    //     }
+
+    //     // حالا node چپ‌ترین گره‌ست
+    //     return node.value;
+    // }
+
     findMin(node = this.root){
-        // اگه درخت خالی بود
-        if(!node) return null;
 
-        // تا وقتی فرزند چپ داری، برو چپ
-        while(node.left){
-            node = node.left;
-        }
+        if(!node) return Infinity;
 
-        // حالا node چپ‌ترین گره‌ست
-        return node.value;
+        let left = this.findMin(node.left);
+        let right = this.findMin(node.left);
+
+        return Math.min(Math.min(left,right),node.value)
     }
+
+
     
 }
 
