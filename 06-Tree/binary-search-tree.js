@@ -195,22 +195,34 @@ class BinarySearchTree {
         return Math.max(Math.max(leftMax,rightMax),node.value)
     }
 
-    isSameTree(node1,node2){
-        // هر دو null
-        if(!node1 && !node2) return true;
+    // isSameTree(node1,node2){
+    //     // هر دو null
+    //     if(!node1 && !node2) return true;
 
-        // یکی null، یکی نه
-        if(!node1 || !node2) return false;
+    //     // یکی null، یکی نه
+    //     if(!node1 || !node2) return false;
 
-        // مقدارها فرق دارن
-        if(node1.value !== node2.value) return false;
+    //     // مقدارها فرق دارن
+    //     if(node1.value !== node2.value) return false;
 
-        // چپ و راست هر دو باید یکسان باشن
-        return this.isSameTree(node1.left,node2.left) && 
-                this.isSameTree(node1.right,node2.right);
+    //     // چپ و راست هر دو باید یکسان باشن
+    //     return this.isSameTree(node1.left,node2.left) && 
+    //             this.isSameTree(node1.right,node2.right);
 
-    }
+    // }
+
+        isSameTree(node1,node2){
+            if(!node1 && !node2) return true;
+
+            if(node1 !== null && node2 !== null){
+                return node1.value === node2.value 
+                && this.isSameTree(node1.left,node2.left)
+                && this.isSameTree(node1.right,node2.right);
+            }
+            return false
+        }
     
+
 }
 
 
@@ -234,7 +246,7 @@ bst2.insert(10);
 bst2.insert(5);
 bst2.insert(15); 
 bst2.insert(3);
-bst2.insert(70);
+bst2.insert(7);
 bst2.insert(12);
 bst2.insert(20);
 console.log(bst.isSameTree(bst.root,bst2.root))
