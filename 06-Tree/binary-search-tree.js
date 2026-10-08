@@ -175,7 +175,16 @@ class BinarySearchTree {
         return min;
     }
 
+    // BST findMax Method
+    findMax(node = this.root){
+        if(!node) return null;
 
+        while(node.right){
+            node = node.right;
+        }
+
+        return node.value;
+    }
     
 }
 
@@ -194,3 +203,4 @@ console.log(bst.traverseInorder())
 console.log(bst.traversePostorder())
 console.log(bst.height())
 console.log(bst.findMin())
+console.log(bst.findMax())
