@@ -194,6 +194,22 @@ class BinarySearchTree {
 
         return Math.max(Math.max(leftMax,rightMax),node.value)
     }
+
+    isSameTree(node1,node2){
+        // هر دو null
+        if(!node1 && !node2) return true;
+
+        // یکی null، یکی نه
+        if(!node1 || !node2) return false;
+
+        // مقدارها فرق دارن
+        if(node1.value !== node2.value) return false;
+
+        // چپ و راست هر دو باید یکسان باشن
+        return this.isSameTree(node1.left,node2.left) && 
+                this.isSameTree(node1.right,node2.right);
+
+    }
     
 }
 
@@ -213,3 +229,12 @@ console.log(bst.traversePostorder())
 console.log(bst.height())
 console.log(bst.findMin())
 console.log(bst.findMax())
+let bst2 = new BinarySearchTree()
+bst2.insert(10);
+bst2.insert(5);
+bst2.insert(15); 
+bst2.insert(3);
+bst2.insert(70);
+bst2.insert(12);
+bst2.insert(20);
+console.log(bst.isSameTree(bst.root,bst2.root))
