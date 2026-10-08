@@ -176,14 +176,23 @@ class BinarySearchTree {
     }
 
     // BST findMax Method
+    // findMax(node = this.root){
+    //     if(!node) return null;
+
+    //     while(node.right){
+    //         node = node.right;
+    //     }
+
+    //     return node.value;
+    // }
+
     findMax(node = this.root){
-        if(!node) return null;
+        if(!node) return -Infinity;
 
-        while(node.right){
-            node = node.right;
-        }
+        const leftMax = this.findMax(node.left);
+        const rightMax = this.findMax(node.right);
 
-        return node.value;
+        return Math.max(Math.max(leftMax,rightMax),node.value)
     }
     
 }
