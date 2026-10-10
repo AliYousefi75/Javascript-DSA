@@ -246,6 +246,12 @@ class BinarySearchTree {
             this.printKDistance(k-1,node.left);
             this.printKDistance(k-1,node.right);
         }
+
+        traverseLevelOrder(){
+            for(let i=0;i<=this.height();i++){
+                 this.printKDistance(i)
+            }
+        }
     
 
 }
@@ -277,3 +283,4 @@ bst2.insert(20);
 console.log(bst.isSameTree(bst.root,bst2.root))
 console.log(bst.isBST())
 bst.printKDistance(1)
+bst.traverseLevelOrder();
