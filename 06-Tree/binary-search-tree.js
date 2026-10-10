@@ -234,6 +234,18 @@ class BinarySearchTree {
             return this.isBST(node.left , min,node.value -1)
             && this.isBST(node.right , node.value +1,max)
         }
+
+        printKDistance(k,node = this.root){
+            if(!node) return;
+
+            if(k === 0){
+                console.log(node.value);
+                return;
+            }
+
+            this.printKDistance(k-1,node.left);
+            this.printKDistance(k-1,node.right);
+        }
     
 
 }
@@ -264,3 +276,4 @@ bst2.insert(12);
 bst2.insert(20);
 console.log(bst.isSameTree(bst.root,bst2.root))
 console.log(bst.isBST())
+bst.printKDistance(1)
