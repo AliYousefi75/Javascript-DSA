@@ -221,6 +221,19 @@ class BinarySearchTree {
             }
             return false
         }
+
+        isBST(node= this.root, min=-Infinity , max=Infinity){
+            if(node == null){
+                return true
+            }
+
+            if(node.value <min || node.value>max){
+                return false;
+            }
+
+            return this.isBST(node.left , min,node.value -1)
+            && this.isBST(node.right , node.value +1,max)
+        }
     
 
 }
@@ -250,3 +263,4 @@ bst2.insert(7);
 bst2.insert(12);
 bst2.insert(20);
 console.log(bst.isSameTree(bst.root,bst2.root))
+console.log(bst.isBST())
