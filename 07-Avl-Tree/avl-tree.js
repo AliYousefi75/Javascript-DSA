@@ -22,5 +22,9 @@ class AVLTree{
         return this.getHeight(node.left) - this.getHeight(node.right);
     }
 
+    updateHeight(node){
+        node.height = 1+Math.max(this.getHeight(node.left),this.getHeight(node.right));
+    }
+
 
 }
