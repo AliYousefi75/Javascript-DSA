@@ -17,5 +17,10 @@ class AVLTree{
         return node.height
     }
 
-    
+    getBalance(node){
+        if(!node)return 0;
+        return this.getHeight(node.left) - this.getHeight(node.right);
+    }
+
+
 }
