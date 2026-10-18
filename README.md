@@ -10,6 +10,7 @@ This repository is part of my journey to improve problem-solving skills and stre
 * Queue
 * HashTable
 * Tree
+* AVLTree
 
 
 ## Structure
@@ -22,6 +23,7 @@ javascript-DSA/
 ├── 04-queue/
 ├── 05-hash-table/
 ├── 06-Tree/
+├── 07-AVLTree/
 └── README.md
 
 
