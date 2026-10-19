@@ -80,5 +80,54 @@ class AVLTree{
         return y; // ریشه‌ی جدید
     }
 
+    insert(value) {
+    this.root = this._insert(this.root, value);
+    }
+
+    _insert(node, value) {
+        // ۱. درج مثل BST معمولی
+        if (!node) {
+            return new Node(value);
+        }
+
+        if (value < node.value) {
+            node.left = this._insert(node.left, value);
+        } else if (value > node.value) {
+            node.right = this._insert(node.right, value);
+        } else {
+            return node; // تکراری قبول نمیشه
+        }
+
+        // ۲. آپدیت ارتفاع
+        this.updateHeight(node);
+
+        // ۳. بررسی توازن
+        const balance = this.getBalance(node);
+
+        // LL: چپ-چپ → چرخش راست
+        if (balance > 1 && value < node.left.value) {
+            return this.rotateRight(node);
+        }
+
+        // RR: راست-راست → چرخش چپ
+        if (balance < -1 && value > node.right.value) {
+            return this.rotateLeft(node);
+        }
+
+        // LR: چپ-راست → چرخش چپ-راست
+        if (balance > 1 && value > node.left.value) {
+            node.left = this.rotateLeft(node.left);
+            return this.rotateRight(node);
+        }
+
+        // RL: راست-چپ → چرخش راست-چپ
+        if (balance < -1 && value < node.right.value) {
+            node.right = this.rotateRight(node.right);
+            return this.rotateLeft(node);
+        }
+
+        return node;
+    }
+
 
 }
