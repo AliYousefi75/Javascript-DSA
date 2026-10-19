@@ -65,5 +65,20 @@ class AVLTree{
         return x;// ریشه‌ی جدید
     }
 
+    rotateLeft(x) {
+        const y = x.right;
+        const T2 = y.left;
+
+        // چرخش
+        y.left = x;
+        x.right = T2;
+
+        // آپدیت ارتفاع
+        this.updateHeight(x);
+        this.updateHeight(y);
+
+        return y; // ریشه‌ی جدید
+    }
+
 
 }
